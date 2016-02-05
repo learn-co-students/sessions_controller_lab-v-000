@@ -15,21 +15,21 @@ RSpec.describe SessionsController, type: :controller do
     it 'sets session[:name] if :name was given' do
       me = 'Werner Brandes'
       post :create, name: me
-      expect(@response.session[:name]).to eq me
+      expect(session[:name]).to eq me
     end
   end
 
-  describe 'post destroy' do    
+  describe 'post destroy' do
     it 'leaves session[:name] nil if it was not set' do
       post :destroy
-      expect(@response.session[:name]).to be nil
+      expect(session[:name]).to be nil
     end
 
     it 'clears session[:name] if it was set' do
       post :create, name: 'Trinity'
-      expect(@response.session[:name]).not_to be nil
+      expect(session[:name]).not_to be nil
       post :destroy
-      expect(@response.session[:name]).to be nil
+      expect(session[:name]).to be nil
     end
   end
 end
