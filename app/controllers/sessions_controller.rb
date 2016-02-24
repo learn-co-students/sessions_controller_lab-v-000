@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
 
   def create
     if params[:name].nil? || params[:name].empty?
-      redirect_to '/sessions/new'
+      #redirect_to '/sessions/new'
+      redirect_to '/login'
     else
       #binding.pry
       session[:name] = params[:name]
@@ -15,7 +16,8 @@ class SessionsController < ApplicationController
   def destroy
     #session.delete :name
     session[:name] = nil
-    redirect_to '/sessions/new'
+    #redirect_to '/sessions/new'
+    redirect_to '/login'
   end
 
   def index
