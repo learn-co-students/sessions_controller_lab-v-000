@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'test/new'
+
   get 'sessions/new'
 
   root 'application#hello'
