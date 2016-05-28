@@ -1,5 +1,10 @@
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
-  <input type=submit value='login'>
+ <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+
+<%= form_tag('/sessions', method: :post) do %>
+<label>Username</label><br>
+<input type="text" id="name" name="name"><br>
+<input type="submit" value="Login">
 <% end %>
 
