@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  def current_user
+  def hello
     @user = session[:name]
   end
 end
