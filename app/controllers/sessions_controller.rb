@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     ## One way to solve this...
     # if params[:name].nil? || params[:name].empty?
-    #   redirect_to login_path
+    #   redirect_to sessions_new_path
     # else
     #   session[:name] = params[:name]
     #   redirect_to root_path
