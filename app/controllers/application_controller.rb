@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
-  def current_user
-    @user = params[:name] 
-  end
+
+  protect_from_forgery with: :exception
+
 
   def hello
-    session[:name] = current_user
+    redirect_to controller: 'sessions', action: 'new' unless session[:name]
   end
   
 end
