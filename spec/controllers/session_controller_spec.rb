@@ -21,6 +21,7 @@ RSpec.describe SessionsController, type: :controller do
 
     it 'redirects to "/" if logged in' do
       me = 'Werner Brandes'
+      @request.session[:name] = me #this test was identical to the previous one; no login was occurring
       post :create, name: me
       expect(response).to redirect_to('/')
     end
