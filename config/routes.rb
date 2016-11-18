@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [:index, :show]
   root 'application#hello'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
