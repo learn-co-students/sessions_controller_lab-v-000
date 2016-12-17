@@ -1,10 +1,23 @@
 module ApplicationHelper
   def hi?
-    if !session[:name].nil? && !session[:name].empty?
-       "Hi, <%= session[:name] %>." #not displayed in view
-       button_to "logout", logout_path
+    if user?
+      #raise session[:name].inspect
+       "Hi, #{@user}." #not displayed in view
+
     else
       link_to 'You must login first', login_path
     end
+  end
+
+  def logout?
+    if user?
+      link_to "logout", logout_path
+    end
+  end
+
+  private
+
+  def user?
+    !@user.nil? && !@user.empty?
   end
 end
