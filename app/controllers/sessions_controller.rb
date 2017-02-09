@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
 
-    if params[:name] == nil || params[:name] == []
+    if params[:name] == nil || params[:name] == ''
       redirect_to '/sessions/new'
     else
       session[:name] = params[:name]
@@ -16,5 +16,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:name] = nil
   end
 end
