@@ -3,7 +3,14 @@ RSpec.describe "Login:" do
     visit '/'
     fill_in 'name', with: 'Harry the Hairdresser'
     click_button 'login'
-    expect(session[:name]).to eq("Harry the Hairdresser")
+    expect(page).to have_content("Harry the Hairdresser")
   end
 
+  it "returns the user to the login page if she fails to enter a name." do
+    visit '/'
+    fill_in 'name', with: ''
+    click_button 'login'
+    expect(page.body).to include "<input type=submit value='login'>"
+    expect(page).to_not have_content("Hi, ")
+  end
 end
