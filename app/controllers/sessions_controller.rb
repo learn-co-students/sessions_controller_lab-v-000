@@ -1,4 +1,14 @@
+require 'pry'
+
 class SessionsController < ApplicationController
+
+  def new
+    render :new
+  end
+
+  def index
+    binding.pry
+  end
 
   def create
     return redirect_to(controller: 'sessions', action: 'new') if !params[:name] || params[:name].empty?
