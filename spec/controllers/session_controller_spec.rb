@@ -41,4 +41,6 @@ RSpec.describe SessionsController, type: :controller do
       expect(@request.session[:name]).to be nil
     end
   end
+
+  
 end
