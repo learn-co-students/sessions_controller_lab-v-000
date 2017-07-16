@@ -1,5 +1,7 @@
+<h1>Please enter your username to login:</h1>
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
+  <label for="">Username:</label><br>
+  <input name=name><br>
   <input type=submit value='login'>
 <% end %>
 
