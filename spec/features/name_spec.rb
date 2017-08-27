@@ -5,7 +5,7 @@ describe "login", :type => :view do
     visit login_path
     fill_in 'name', with: 'Kyle'
     click_button 'login'
-    expect(page.body).to include 'Hi, Kyle'
+    expect(page.body).to include 'Hi, Kyle.'
   end
 
   it "does not log user in without a name given via form" do
