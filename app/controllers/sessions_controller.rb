@@ -4,11 +4,11 @@ class SessionsController < ApplicationController
 
   def create
     # byebug
-    if params[:name] == '' || params[:name] == nil
+    if !params[:name] || params[:name].empty? 
       redirect_to sessions_new_path
     else
       session[:name] = params[:name]
-      redirect_to '/'
+      redirect_to root_path
     end 
   end
 
