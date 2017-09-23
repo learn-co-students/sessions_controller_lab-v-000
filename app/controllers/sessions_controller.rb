@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         redirect_to '/'
       else
         binding.pry
-        redirect_to '/login'
+        redirect_to sessions_new
       end
   end
 
