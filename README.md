@@ -14,6 +14,8 @@ Our app will have two pages:
     * users can enter their name in a form and click 'login'. Thereafter, the app will refer to them by that name.
     * if the user does not enter a name, they are not logged in. Return them to the login page.
 
+ 
+
 ## Instructions
 
 1. Create the sessions controller.
