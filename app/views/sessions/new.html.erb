@@ -1,5 +1,7 @@
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
-  <input type=submit value='login'>
-<% end %>
+<%= form_tag login_path do %>
+  <div>
+    <%= text_field_tag 'name', nil, placeholder: 'Username' %>
 
+    <%= submit_tag 'login' %>
+  </div>
+<% end %>
