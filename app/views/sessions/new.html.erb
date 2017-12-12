@@ -1,5 +1,7 @@
+<h3>Please log in:</h3>
+
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
+  <%= label_tag "Name:" %>
+  <input name=name placeholder="Name"><br><br>
   <input type=submit value='login'>
 <% end %>
-
