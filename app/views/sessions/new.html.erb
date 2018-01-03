@@ -1,5 +1,11 @@
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
-  <input type=submit value='login'>
+
+<% if params[:name] == nil || params[:name].empty? %>
+  <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+    <input name=name>
+    <input type=submit value='login'>
+  <% end %>
+<% else %>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'delete'}) do %>
+    <input type=submit value='logout'>
+  <% end %>
 <% end %>
-<%= link_to "Log Out", action: 'destroy', method: 'delete'%>
