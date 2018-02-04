@@ -1,5 +1,10 @@
+<% if !session[:name] %>
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
   <input name=name>
   <input type=submit value='login'>
 <% end %>
-
+<% else %>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
+<% end %>
