@@ -1,4 +1,12 @@
-<form method="post">
-  <input name='name'>
-  <input type='subit' value='login'>
-</form>
+<% if session[:name] == nil %>
+  <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+    <input name='name'>
+    <input type='submit' value='login'>
+    <%end%>
+
+<% else %>
+  <%= "Hi, #{session[:name]}" %>
+  <% form_tag({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type='submit' value='logout'>
+  <% end %>
+<% end %>
