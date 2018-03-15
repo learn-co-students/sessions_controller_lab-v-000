@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  #above is a product of running the controller generator
+  #rails g controller sessions new --no-helper --no-assets --no-controller-specs
+
+
   root 'application#hello'
+  #root directory sends route request to ApplicationController hello method. Need to make action
+
+  #make sure SessionsController has  new create and destroy actiosn
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
