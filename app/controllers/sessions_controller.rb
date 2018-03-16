@@ -7,11 +7,14 @@ class SessionsController < ApplicationController
 # SessionsController post create sets session[:name] if :name was given
 # SessionsController post create redirects to "/" if logged in
   def create
-    @session = Session.find(params[:name])
-    session[:name] = params[:name]
-      if :name == nil || :name.empty?
 
-      redirect_to 'login'
+    #@session = Session.find(params[:name])
+    @session[:name] = params[:name]
+      if !params[:name] || params[:name].empty?
+      #if params[:name] == nil || params[:name].empty?
+      redirect_to controller: 'sessions', action: 'new'
+      #redirect_to '/'
+      #redirect_to 'login'
 
         end
   end
