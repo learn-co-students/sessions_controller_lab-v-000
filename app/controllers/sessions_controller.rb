@@ -14,10 +14,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if session[:name]
       session.delete :name
-    end
+      # new syntax I'm not used to.  specifying the controller, and the action.  Makes sense I guess because we're not currently in the Application Controller, we're in the Sessions Controller.  Also interesting is that #hello is not actually defined in the application controller, I think because there is no logic, it only takes data from the session hash.  #hello is defined as the root route in routes.rb, and the hello view is present as well, duh.
+      redirect_to controller: 'application', action: 'hello'
+    
   end
-
 
 end
