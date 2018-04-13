@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # get 'sessions/new'
+  # why did i need to get rid of the line above for the tests to pass?
+
   root 'application#hello'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
