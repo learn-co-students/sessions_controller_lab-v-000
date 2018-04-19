@@ -17,12 +17,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if session[:name].present?
-      session.delete :name
-      redirect_to logout_path
-    else
-      redirect_to login_path
-    end
+    session.delete :name
+    redirect_to login_path
   end
 
 end
