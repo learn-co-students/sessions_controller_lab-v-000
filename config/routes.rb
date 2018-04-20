@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  resources :application, only: [:hello]
 
   root 'application#hello'
   get '/login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
