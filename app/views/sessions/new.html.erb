@@ -1,3 +1,8 @@
+<h1>Please login</h1>
+<% if session[:name].present? %>
+<h3>Hi <%= session[:name] %></h3>
+<% end %>
+
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
   <input name=name>
   <input type=submit value='login'>
