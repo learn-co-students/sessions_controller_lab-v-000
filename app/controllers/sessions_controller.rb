@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if !params[:name] || params[:name] = ""
+    if !params[:name] || params[:name] == ""
       redirect_to '/login'
     else
       if params[:name] != session[:name]
@@ -13,11 +13,11 @@ class SessionsController < ApplicationController
       end
       redirect_to '/'
     end
-    binding.pry
   end
 
   def destroy
-    session[:name].clear
+    session[:name] = nil
+    redirect_to '/'
   end
 
 end
