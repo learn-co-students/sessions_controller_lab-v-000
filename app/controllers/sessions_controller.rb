@@ -4,12 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:name] = params[:name]
-    if !logged_in
-      binding.pry
+    if params[:name].blank?
       redirect_to login_path
     else
-    render :hello
+    session[:name] = params[:name]
+    redirect_to root_path
     end
   end
 

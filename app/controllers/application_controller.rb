@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def hello
     if !logged_in
+      binding.pry
       redirect_to login_path
     end
   end
@@ -12,6 +13,8 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in
 
   def logged_in
-    session[:name] != '' || session[:name] != nil ? true : false
+    if params[:name] != '' || params[:name] != nil
+      true
+    end
   end
 end
