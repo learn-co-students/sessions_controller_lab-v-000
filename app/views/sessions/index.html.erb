@@ -1,0 +1,10 @@
+<% if session[:name] %>
+  <%= "Hi, #{session[:name]}" %>
+
+  <form method="POST" action="/logout">
+    <input name="_method" type="hidden" value="delete">
+    <input type="submit" value="logout">
+  </form>
+<% else %>
+  <a href="/login">Log In</a>
+<% end %>
