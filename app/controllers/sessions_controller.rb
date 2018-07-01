@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
 
   def create
     session[:name] = params[:name]
-    # if session[:name]
+
     if session[:name] == nil || session[:name].empty?
     redirect_to :login
-  # elsif session[:name] == nil || session[:name].empty?
+  
 else
       redirect_to :controller => :application, :action => 'hello'
     end
