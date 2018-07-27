@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "sessions/new.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+	it 'has a form with a name field' do
+		visit 'sessions/new'
+		expect(page).to have_selector("form")
+		expect(page).to have_field(:name)
+	end
 end

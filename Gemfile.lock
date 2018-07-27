@@ -87,6 +87,9 @@ GEM
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack_session_access (0.1.1)
+      builder (>= 2.0.0)
+      rack (>= 1.0.0)
     rails (4.2.10)
       actionmailer (= 4.2.10)
       actionpack (= 4.2.10)
@@ -179,6 +182,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  rack_session_access
   rails (~> 4.2)
   rspec-rails (~> 3.7)
   sass-rails (~> 5.0)
