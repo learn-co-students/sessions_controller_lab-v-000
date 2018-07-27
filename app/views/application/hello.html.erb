@@ -3,3 +3,6 @@
   <input type=submit value='logout'>
 <% end %>
 
+< -- if session[:username].empty?
+  redirect_to '/login'
+else
