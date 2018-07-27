@@ -4,13 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # if provided login name and name is not " "
-    if params[:name] && !params[:name].nil? 
+    # if login name provided (not empty) and name is not " "
+      # set session to the provided name
+    if !params[:name].blank? && !params[:name].nil?
       session[:name] = params[:name]
-
+      # redirect to homepage
       redirect_to '/'
     else
-      # else they need to enter/reenter login name
+      # else redirect to login
       redirect_to '/login'
     end
   end
@@ -27,3 +28,5 @@ class SessionsController < ApplicationController
   end
 
 end
+
+# still takes me to '/' even if haven't logged in
