@@ -1,5 +1,9 @@
+<h1> Log In </h1>
+<% if flash[:alert] %>
+    <font color="red"><%= flash[:alert] %></font>
+  <% end %>
+
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
+  Name: <input name=name>
   <input type=submit value='login'>
 <% end %>
-
