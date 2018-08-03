@@ -5,8 +5,17 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:name] = params[:name] if !params[:name].empty?
-    redirect_to '/'
+    # if params[:name].present?
+    #   session[:name] = params[:name]
+    # end
+    # redirect_to '/'
+    # NOTE: need to use if block or else get double render error!
+    if !params[:name].present?
+      redirect_to login_path
+    else
+      session[:name] = params[:name]
+      redirect_to '/'
+    end
   end
 
   def destroy
