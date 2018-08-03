@@ -1,12 +1,12 @@
+require 'pry'
 class SessionsController < ApplicationController
-  helper_method :logged_in?, :username
 
   def new
   end
 
   def create
-    session[:name] = params[:name]
-    redirect_to login_path
+    session[:name] = params[:name] if !params[:name].empty?
+    redirect_to '/'
   end
 
   def destroy
