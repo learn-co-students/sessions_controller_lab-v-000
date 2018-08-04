@@ -13,9 +13,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy#route: post '/logout'
-    session[:name] == nil if session[:name] == nil
-    session.delete :name
-    redirect_to '/'
+    if session[:name] == nil
+      redirect_to '/'
+    else
+      session.delete :name
+      redirect_to '/'
+    end
   end
 
 end
