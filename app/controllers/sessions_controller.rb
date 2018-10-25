@@ -5,8 +5,12 @@ class SessionsController < ApplicationController
 
   def create
     #binding.pry
-    if session[:name] == nil
+    if params[:name] == nil
       redirect_to sessions_new_path
+    else
+      session[:name] = params[:name]
+      #binding.pry
+      redirect_to "/"
     end
   end
 end
