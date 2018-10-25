@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     #binding.pry
     if params[:name] == nil
       redirect_to sessions_new_path
+    elsif params[:name].empty?
+      redirect_to sessions_new_path
     else
       session[:name] = params[:name]
       #binding.pry
