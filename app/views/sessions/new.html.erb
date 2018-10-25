@@ -1,5 +1,8 @@
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
-  <input type=submit value='login'>
-<% end %>
+<h1>Sign up Login Page</h1>
 
+<%= form_tag(method: :post, action: :create, controller: :sessions) do %>
+
+<label>Name</label><br>
+<%= text_area_tag :username %><br>
+<%= submit_tag "Login" %>
+<% end %>
