@@ -15,4 +15,13 @@ class SessionsController < ApplicationController
       redirect_to "/"
     end
   end
+
+  def destroy
+    #binding.pry
+    if session[:name]
+      session.delete :name
+    end
+    redirect_to "/"
+  end
+
 end
