@@ -1,0 +1,8 @@
+<% if @username %>
+	<%= "hi, #{@username}" %>
+	<form method ="post">
+		<input type="submit" value="logout" >
+	</form>
+<% else %>
+	<%= link_to "Login", '/sessions/new' %>
+<% end %>
