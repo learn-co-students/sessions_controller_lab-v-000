@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     if logged_in?
       render '/application/hello'
     else
-      render '/sessions/new'
+      redirect_to login_path
     end
   end
 
