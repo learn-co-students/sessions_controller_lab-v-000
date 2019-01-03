@@ -1,0 +1,8 @@
+<%= if session[:name].nil? %>
+<%= link_to 'log in', '/login' %>
+<% else %>
+ <%= 'hi, session[:name]' %>
+ <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+ <%= input type=submit value='logout' %>
+ <% end %>
+ <% end %>
