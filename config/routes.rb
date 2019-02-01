@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'application#hello'
   get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  post '/login' => 'sessions#create', as: "login_create"
   post '/logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
