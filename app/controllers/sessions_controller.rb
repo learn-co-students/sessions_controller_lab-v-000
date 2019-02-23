@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
 
   def create
     session[:username] = params[:username]
-    session[:name] = params[:name]
+    @name = session[:name]
+
       redirect_to '/sessions/new'
 
 end
