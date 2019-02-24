@@ -7,10 +7,7 @@ class SessionsController < ApplicationController
 
   def create
   #  binding.pry
-  #  if sets_session_name
-  if session[:name] = params[:name]
-    @name = session[:name]
-
+    if sets_session_name
       redirect_to '/'
     else
       redirect_to '/sessions/new'

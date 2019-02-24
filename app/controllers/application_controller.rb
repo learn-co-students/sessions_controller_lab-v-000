@@ -10,10 +10,6 @@ class ApplicationController < ActionController::Base
       session[:name] = params[:name]
         @name = session[:name]
     end
-
-#end
-
-
-
+  end
 
 end
