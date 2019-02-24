@@ -1,15 +1,21 @@
+require 'pry'
+
 class SessionsController < ApplicationController
 
   def new
   end
 
   def create
-    session[:username] = params[:username]
-    session[:name] = params[:name]
+  #  binding.pry
+  #  if sets_session_name
+  if session[:name] = params[:name]
+    @name = session[:name]
 
+      redirect_to '/'
+    else
       redirect_to '/sessions/new'
-
-end
+    end
+  end
 
   def destroy
     session.delete :username
