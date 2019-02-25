@@ -1,3 +1,5 @@
+require 'pry'
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -6,10 +8,16 @@ class ApplicationController < ActionController::Base
   helper_method :sets_session_name
 
   def sets_session_name
-    if params[:name] != "" || params[:name] !=nil
+    if params[:name] && !params[:name].empty?
       session[:name] = params[:name]
-        @name = session[:name]
+      @name = session[:name]
+
     end
+  #  binding.pry
   end
+
+  #def go_to_login
+  #  !!!params[:name] ="" || !!!params[:name] =nil
+  #end
 
 end
