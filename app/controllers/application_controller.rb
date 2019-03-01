@@ -11,13 +11,7 @@ class ApplicationController < ActionController::Base
     if params[:name] && !params[:name].empty?
       session[:name] = params[:name]
       @name = session[:name]
-
     end
-  #  binding.pry
   end
 
-  #def go_to_login
-  #  !!!params[:name] ="" || !!!params[:name] =nil
-  #end
-
-end
+ end
