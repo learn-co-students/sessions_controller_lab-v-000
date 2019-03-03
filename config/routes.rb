@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static/home'
+
+  get 'sessions/new', as: 'new_session'
+
   root 'application#hello'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
