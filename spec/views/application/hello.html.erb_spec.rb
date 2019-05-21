@@ -1,5 +1,18 @@
-require 'rails_helper'
+describe "user is logged in", type: :feature do
 
-RSpec.describe "application/hello.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    visit login
+    fill_in "name", with: "Dill"
+    click_button "login"
+  end
+
+  let(:user) { session[:name] }
+
+  describe "GET /" do
+    it "greets the user and provides a logout link" do
+      visit root
+      expect(page).to have_content 
+    end
+  end
+
 end
