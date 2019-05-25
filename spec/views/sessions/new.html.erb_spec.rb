@@ -5,19 +5,19 @@ require 'rails_helper'
 # end
 
 
-RSpec.feature "Home page" do
-  scenario "show login link if user not logged in" do
-    visit root_path
-    # include link to login
-
-    # expect(page.body).to
-  end
-
-   # this test will check if the user is logged in
-   # if yes, the page should say "hi, #{name}"
-   # provide logout link
-
-end
+# RSpec.feature "Home page" do
+#   scenario "show login link if user not logged in" do
+#     visit root_path
+#     # include link to login
+#
+#     # expect(page.body).to
+#   end
+#
+#    # this test will check if the user is logged in
+#    # if yes, the page should say "hi, #{name}"
+#    # provide logout link
+#
+# end
 
 # this test will show a form for the user to fill in  and click the login button
 # The app will refer to the user by name
