@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user_name = params[:name]
     if user_name.nil? || user_name.empty?
-      redirect_to '/'
+      redirect_to sessions_new_path
     else
       session[:name] = user_name
       redirect_to '/'
