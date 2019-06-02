@@ -3,8 +3,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:name] = params[:name]
-    redirect_to '/'
+    if params[:name] == nil || params[:name].empty?
+      redirect_to '/login'
+    else
+      session[:name] = params[:name]
+      redirect_to '/'
+    end
+  end
+
+  def hello
+    @current_user = session[:name]
   end
 
   def destroy

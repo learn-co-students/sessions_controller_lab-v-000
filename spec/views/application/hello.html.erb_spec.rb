@@ -1,7 +1,7 @@
 describe "user is logged in", type: :feature do
 
   before do
-    visit login
+    visit login_path
     fill_in "name", with: "Dill"
     click_button "login"
   end
@@ -10,8 +10,8 @@ describe "user is logged in", type: :feature do
 
   describe "GET /" do
     it "greets the user and provides a logout link" do
-      visit root
-      expect(page).to have_content 
+      visit root_path
+      expect(page).to have_selector "input[type='submit']"
     end
   end
 
