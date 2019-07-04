@@ -27,7 +27,7 @@ require "rack_session_access/capybara"
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
-Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+# Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
