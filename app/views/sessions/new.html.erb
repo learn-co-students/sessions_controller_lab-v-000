@@ -1,6 +1,8 @@
 <h1>Login</h1>
 
-<form method='post'>
-  <input name='name'><br>
-  <input type='submit' value='Login'>
-</form>
+<%= form_tag login_path method: :post do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %><br><br>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= submit_tag "Login" %>
+<% end %>
