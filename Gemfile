@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~>1.3.6'
+# Use Puma as the app server
+gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -42,5 +44,8 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'rspec-rails'
-  gem 'capybara'
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'rack_session_access'
 end
