@@ -6,8 +6,12 @@ describe "a good login", type: :feature do
     reset_session!
     visit login_path
     fill_in :name, with: 'Pip'
-    find('input[type="submit"]').click
+    click_button "Login"
   end
+
+  # it "creates session hash on successful login" do
+  #   expect(page.get_rack_session_key('name')).to_not be_nil
+  # end
 
   it "allows the user to log in with a correct username" do
     expect(page).to have_content("Hi, Pip.")
@@ -19,7 +23,7 @@ describe "a bad login", type: :feature do
     reset_session!
     visit login_path
     fill_in :name, with: NIL
-    find('input[type="submit"]').click
+    click_button "Login"
   end
 
   it "redirects to login if submission is blank" do
