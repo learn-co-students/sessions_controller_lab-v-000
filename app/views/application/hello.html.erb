@@ -1,5 +1,10 @@
-<h1>Hi, <%= session[:name] %>.</h1>
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
+<!-- If the user is not logged in, the page should show them a login link. -->
+<% if session[:name].nil? || session[:name].empty? %>
+  <%= link_to "Login", sessions_new_path %>
+<% else %>
+<!-- If the user is logged in, the page should say, "hi, #{name}", and provide a logout link. -->
+  <h1>Hi, <%= session[:name] %>.</h1>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+  <% end %>
 <% end %>
-
