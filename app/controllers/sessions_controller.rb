@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
 
   def destroy
     if session[:name].present?
-      session.destroy
+      session.destroy # The solution instead uses 'session.delete :name', which works as well.
+      # session.delete :name
     end
 
     redirect_to root_path # This should happen, regardless of whether session[:name] is present.
