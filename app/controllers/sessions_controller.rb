@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
     if params[:name].nil? || params[:name].strip.empty?
       redirect_to login_path
     else
-      session[:name]= params[:name]
+      session[:name]=params[:name]
       redirect_to root_path
     end
   end
   def destroy
-    session.clear
+    logout
     redirect_to login_path
   end
 end
