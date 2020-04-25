@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  root 'sessions#show'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
