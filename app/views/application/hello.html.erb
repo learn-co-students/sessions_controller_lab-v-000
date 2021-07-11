@@ -1,5 +1,6 @@
-<h1>Hi, <%= session[:name] %>.</h1>
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-<% end %>
+<h1>Hi, <%= @current_user %>.</h1>
 
+<%= form_tag logout_path method: :delete do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= submit_tag "Logout" %>
+<% end %>
